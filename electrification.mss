@@ -173,56 +173,56 @@
       }
     }
 
-    [frequency!=0][voltage<12000],
-    [frequency!=0][frequency!=25][voltage=12000],
-    [frequency!=0][voltage>12000][voltage<12500],
-    [frequency!=0][frequency!=60][voltage=12500],
-    [frequency!=0][voltage>12500][voltage<15000] {
+    [frequency>0][voltage<12000],
+    [frequency>0][frequency!=25][voltage=12000],
+    [frequency>0][voltage>12000][voltage<12500],
+    [frequency>0][frequency!=60][voltage=12500],
+    [frequency>0][voltage>12500][voltage<15000] {
        line-color: @color_lt15kv_ac;
     }
 
-    [frequency!=0][frequency!=16.67][frequency!=16.7][voltage=15000],
-    [frequency!=0][voltage>15000][voltage<20000],
-    [frequency!=0][frequency!=50][frequency!=60][voltage=20000],
-    [frequency!=0][voltage>20000][voltage<25000] {
+    [frequency>0][frequency!=16.67][frequency!=16.7][voltage=15000],
+    [frequency>0][voltage>15000][voltage<20000],
+    [frequency>0][frequency!=50][frequency!=60][voltage=20000],
+    [frequency>0][voltage>20000][voltage<25000] {
        line-color: @color_gte15kv_lt25kv_ac;
     }
 
-    [frequency!=0][frequency!=50][frequency!=60][voltage=25000],
-    [frequency!=0][voltage>25000] {
+    [frequency>0][frequency!=50][frequency!=60][voltage=25000],
+    [frequency>0][voltage>25000] {
        line-color: @color_gte25kv_ac;
     }
 
     [frequency=0]["voltage"<750] {
-       line-color: #FF79B8;
+       line-color: @color_lt750v_dc;
     }
 
     [frequency=0]["voltage"=750] {
-       line-color: #F930FF;
+       line-color: @color_750v_dc;
     }
 
     [frequency=0][voltage>750][voltage<1000] {
-       line-color: #D033FF;
+       line-color: @color_gt750v_lt1kv_dc;
     }
 
     [frequency=0]["voltage"=1000] {
-       line-color: #5C1CCB;
+       line-color: @color_1kv_dc;
     }
 
     [frequency=0][voltage>1000][voltage<1500] {
-       line-color: #007ACB;
+       line-color: @color_gt1kv_lt1500v_dc;
     }
 
     [frequency=0]["voltage"=1500] {
-       line-color: #0098CB;
+       line-color: @color_1500v_dc;
     }
 
     [frequency=0][voltage>1500][voltage<3000] {
-       line-color: #00B7CB;
+       line-color: @color_gt1500v_lt3kv_dc;
     }
 
     [frequency=0]["voltage"=3000] {
-       line-color: #0000FF;
+       line-color: @color_3kv_dc;
     }
 
     [frequency=0][voltage>3000] {
